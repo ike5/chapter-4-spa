@@ -4,7 +4,6 @@
  * Shell module for SPA
  */
 
-
 spa.shell = (function () { // eslint-disable-line no-undef
 	// ---------------- BEGIN MODULE SCOPE VARIABLES ---------------
 	var
