@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 // spa.test.js
 // using Jest to test spa.js file
 
-const stuff = require('./spa');
+const stuff = require('../js/spa');
 
 describe('stuff()', () => {
     
