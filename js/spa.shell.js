@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * spa.shell.js
  * Shell module for SPA
@@ -12,25 +13,25 @@ spa.shell = (function () { // eslint-disable-line no-undef
                 chat: { open: true, closed: true }
             },
             main_html: String() +
-                "      <div class=\"spa-shell-head\">" +
-                "        <div class=\"spa-shell-head-logo\"></div>" +
-                "        <div class=\"spa-shell-head-acct\"></div>" +
-                "        <div class=\"spa-shell-head-search\"></div>" +
-                "      </div>" +
-                "      <div class=\"spa-shell-main\">" +
-                "        <div class=\"spa-shell-main-nav\"></div>" +
-                "        <div class=\"spa-shell-main-content\"></div>" +
-                "      </div>" +
-                "      <div class=\"spa-shell-foot\"></div>" +
-                "      <div class=\"spa-shell-chat\"></div>" +
-                "      <div class=\"spa-shell-modal\"></div>" +
-                "",
+                '      <div class="spa-shell-head">' +
+                '        <div class="spa-shell-head-logo"></div>' +
+                '        <div class="spa-shell-head-acct"></div>' +
+                '        <div class="spa-shell-head-search"></div>' +
+                '      </div>' +
+                '      <div class="spa-shell-main">' +
+                '        <div class="spa-shell-main-nav"></div>' +
+                '        <div class="spa-shell-main-content"></div>' +
+                '      </div>' +
+                '      <div class="spa-shell-foot"></div>' +
+                '      <div class="spa-shell-chat"></div>' +
+                '      <div class="spa-shell-modal"></div>' +
+                '',
             chat_extend_time: 250,
             chat_retract_time: 300,
             chat_extend_height: 450,
             chat_retract_height: 15,
-            chat_extended_title: "Click to retract",
-            chat_retracted_title: "Click to extend"
+            chat_extended_title: 'Click to retract',
+            chat_retracted_title: 'Click to extend'
         },
         stateMap = {
             $container: null,
@@ -61,7 +62,7 @@ spa.shell = (function () { // eslint-disable-line no-undef
         var $container = stateMap.$container;
         jqueryMap = {
             $container: $container,
-            $chat: $container.find(".spa-shell-chat")
+            $chat: $container.find('.spa-shell-chat')
         };
     };
     // End DOM method /setJqueryMap/
@@ -97,7 +98,7 @@ spa.shell = (function () { // eslint-disable-line no-undef
                 configMap.chat_extend_time,
                 function () {
                     jqueryMap.$chat.attr(
-                        "title", configMap.chat_extended_title
+                        'title', configMap.chat_extended_title
                     );
                     stateMap.is_chat_retracted = false;
                     if (callback) { callback(jqueryMap.$chat); }
@@ -113,7 +114,7 @@ spa.shell = (function () { // eslint-disable-line no-undef
             configMap.chat_retract_time,
             function () {
                 jqueryMap.$chat.attr(
-                    "title", configMap.chat_retracted_title
+                    'title', configMap.chat_retracted_title
                 );
                 stateMap.is_chat_retracted = true;
                 if (callback) { callback(jqueryMap.$chat); }
@@ -241,7 +242,7 @@ spa.shell = (function () { // eslint-disable-line no-undef
     // Begin Event handler /onClickChat/
     onClickChat = function (event) { // eslint-disable-line no-unused-vars
         changeAnchorPart({
-            chat: (stateMap.is_chat_retracted ? "open" : "closed")
+            chat: (stateMap.is_chat_retracted ? 'open' : 'closed')
         });
 
         return false;
@@ -264,10 +265,11 @@ spa.shell = (function () { // eslint-disable-line no-undef
         // initilize chat slider and bind click handler
         stateMap.is_chat_retracted = true;
         jqueryMap.$chat
-            .attr("title", configMap.chat_retracted_title)
+            .attr('title', configMap.chat_retracted_title)
             .click(onClickChat);
 
         // configure uriAnchor to use our schema
+        // eslint-disable-next-line no-undef
         $.uriAnchor.configModule({
             schema_map: configMap.anchor_schema_map
         });
@@ -278,9 +280,10 @@ spa.shell = (function () { // eslint-disable-line no-undef
         // trigger event, which is used ot ensure the anchor is considered 
         // on-load
         //
+        // eslint-disable-next-line no-undef
         $(window)
-            .bind("hashchange", onHashchange)
-            .trigger("hashchange");
+            .bind('hashchange', onHashchange)
+            .trigger('hashchange');
     };
     // End Public method /initModule/
 
