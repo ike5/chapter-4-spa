@@ -4,8 +4,12 @@
  * Shell module for SPA
  */
 
+
+
+
+
 spa.shell = (function () { // eslint-disable-line no-undef
-	// ---------------- BEGIN MODULE SCOPE VARIABLES ---------------
+	////////////////////BEGIN MODULE SCOPE VARIABLES////////////////////////
 	var
 		configMap = {
 			anchor_schema_map: {
@@ -45,17 +49,30 @@ spa.shell = (function () { // eslint-disable-line no-undef
 		onHashchange,
 		onClickChat,
 		initModule;
-	//------------------ END MODULE SCOPE VARIABLES--------------------
+	/////////////////////////END MODULE SCOPE VARIABLES/////////////////////////
 
-	//------------------ BEGIN UTILITY METHODS-------------------------
+
+
+
+
+
+
+
+	/////////////////////////BEGIN UTILITY METHODS/////////////////////////
 	// Returns copy of stored anchor map; minimizes overhead
 	copyAnchorMap = function () {
 		return $.extend(true, {}, stateMap.anchor_map);
 	};
 
-	//---------------------END UTILITY METHODS ------------------------
+	/////////////////////////END UTILITY METHODS///////////////////////// 
 
-	//------------------ BEGIN DOM METHODS ----------------------------
+
+
+
+
+
+
+	/////////////////////////BEGIN DOM METHODS///////////////////////// 
 	// Begin DOM method /setJqueryMap/
 	setJqueryMap = function () {
 		var $container = stateMap.$container;
@@ -124,6 +141,7 @@ spa.shell = (function () { // eslint-disable-line no-undef
 	};
 	// End DOM method /toggleChat/
 
+
 	// Begin DOM method /changeAnchorPart/
 	// Purpose  : Changes part of the URI anchor component
 	// Arguments:   * arg_map - The map describing what part of the URI anchor we want changed
@@ -182,9 +200,15 @@ spa.shell = (function () { // eslint-disable-line no-undef
 		return bool_return;
 	};
 	// End DOM method /changeAnchorPart/
-	//------------------- END DOM METHODS -----------------------------
+	/////////////////////////END DOM METHODS///////////////////////// 
 
-	//------------------- BEGIN EVENT HANDLERS ------------------------
+
+
+
+
+
+
+	/////////////////////////BEGIN EVENT HANDLERS///////////////////////// 
 	// Begin Event Handler /onHashchange/
 	// Purpose  : Handles the hashchange event
 	// Arguments: 
@@ -252,9 +276,16 @@ spa.shell = (function () { // eslint-disable-line no-undef
 		// event.preventImmediatePropagation() concludes handler execution
 	};
 	// End Event handler /onClickChat/
-	//------------------- END EVENT HANDLERS --------------------------
+	/////////////////////////END EVENT HANDLERS/////////////////////////
 
-	//------------------- BEGIN PUBLIC METHODS ------------------------
+
+
+
+
+
+
+
+	/////////////////////////BEGIN PUBLIC METHODS//////////////////////// 
 	// Begin Public method /initModule/
 	initModule = function ($container) {
 		// load HTML and map jQuery collections
@@ -287,10 +318,8 @@ spa.shell = (function () { // eslint-disable-line no-undef
 	};
 	// End Public method /initModule/
 
-
-
 	return { initModule: initModule };
-	//------------------- END PUBLIC METHODS --------------------------
+	/////////////////////////END PUBLIC METHODS///////////////////////// 
 
 })();
 
